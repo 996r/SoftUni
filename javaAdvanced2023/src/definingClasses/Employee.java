@@ -1,6 +1,6 @@
 package definingClasses;
 
-public class Employee {
+public class Employee  <Employee> {
 
     private String name;
     private double salary;
@@ -31,7 +31,7 @@ public class Employee {
     public String getName () {
         return name;
     }
-    public double getSalary() {
+    public  double getSalary() {
         return salary;
     }
     public String getPosition() {
@@ -46,6 +46,8 @@ public class Employee {
     public int getAge() {
         return age;
     }
+
+
 
 
 }
