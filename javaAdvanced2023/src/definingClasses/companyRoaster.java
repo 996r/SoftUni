@@ -15,7 +15,7 @@ Employee employee = new Employee(cmd[0],Double.parseDouble(cmd[1]),cmd[2],cmd[3]
 store.add(employee);
             } else if (cmd.length == 5) {
                 String tmp = cmd[3];
-                if(Character.isDigit(cmd[3].charAt(0))){
+                if(Character.isDigit(cmd[4].charAt(0))){
                     Employee employee = new Employee(cmd[0],Double.parseDouble(cmd[1]),cmd[2],cmd[3],"n/a",
                             Integer.parseInt(cmd[4]));
                     store.add(employee);
@@ -56,13 +56,13 @@ store.add(employee);
 //                    .forEach((e -> System.out.println(e.getName())));
 
        Collections.sort(maxDepartment, (o1, o2) -> (int) (o2.getSalary() - o1.getSalary()));
-        System.out.println("Highest Average Salary:");
+        System.out.print("Highest Average Salary: ");
         System.out.println(max);
         for (int i = 0; i < maxDepartment.size() ; i++) {
-            System.out.println(maxDepartment.get(i).getName() + " "
-                    + " " +maxDepartment.get(i).getSalary()
-                    + " " +maxDepartment.get(i).getEmail()
-                    + " " + maxDepartment.get(i).getAge());
+            System.out.printf("%s %.2f %s %d%n",maxDepartment.get(i).getName(),
+                    maxDepartment.get(i).getSalary(),
+                    maxDepartment.get(i).getEmail(),
+                    maxDepartment.get(i).getAge());
 
         }
 
@@ -70,3 +70,7 @@ store.add(employee);
         }
 }
 
+//System.out.println(maxDepartment.get(i).getName() + " "
+//        +maxDepartment.get(i).getSalary()
+//        + " " +maxDepartment.get(i).getEmail()
+//        + " " + maxDepartment.get(i).getAge());
