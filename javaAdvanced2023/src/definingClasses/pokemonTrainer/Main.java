@@ -23,12 +23,13 @@ public class Main {
         input = keyboard.nextLine();
         while(!input.equals("End")) {
            for(Map.Entry<String, Trainer> entry: storeTrainer.entrySet()) {
-
+boolean earnBadges = false;
                for (int i = 0; i < storePokemon.size() ; i++) {
                    if (storePokemon.get(i).getElement().equals(input) ) {
                        if (entry.getValue().getPokemonList()
                                .contains(storePokemon.get(i).getName())) {
                            entry.getValue().addBadges(1);
+                           earnBadges = true;
                            break;
                        }
                    }
@@ -36,11 +37,13 @@ public class Main {
                {
                        for (int j = 0; j < entry.getValue().getPokemonList().size() ; j++) {
                            for (int k = 0; k < storePokemon.size() ; k++) {
-if(storePokemon.get(k).getName().equals(entry.getValue().getPokemonList().get(j))) {
+if(storePokemon.get(k).getName().equals(entry.getValue().getPokemonList().get(j)) && earnBadges == false) {
     storePokemon.get(k).removeHealth();
-} if(storePokemon.get(k).getHealth() <= 0){
+
+} if(storePokemon.get(k).getHealth() <= 0 && earnBadges == false){
                                    System.out.println(entry.getValue().getPokemonList());
                                    entry.getValue().getPokemonList().remove(k);
+                                   storePokemon.remove(k);
                                    if(entry.getValue().getPokemonList().size() <= 0){
                                        break;
                                    }
