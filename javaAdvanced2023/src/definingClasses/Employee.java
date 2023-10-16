@@ -1,6 +1,6 @@
 package definingClasses;
 
-public class Employee  <Employee> {
+public class Employee {
 
     private String name;
     private double salary;
@@ -28,27 +28,5 @@ public class Employee  <Employee> {
         this. email = email;
         this.age = age;
     }
-    public String getName () {
-        return name;
-    }
-    public  double getSalary() {
-        return salary;
-    }
-    public String getPosition() {
-        return position;
-    }
-    public String getDepartment() {
-        return department;
-    }
-    public String  getEmail() {
-        return email;
-    }
-    public int getAge() {
-        return age;
-    }
-
-
-
-
 }
 
