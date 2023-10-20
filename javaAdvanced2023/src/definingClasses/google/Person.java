@@ -39,12 +39,8 @@ public class Person {
         public void addCar (Car car) {
             this.car = car;
         }
-        public void addPerson(Person person) {
-            personList.add(person);
-        }
 
-
- }
+}
 
 
 

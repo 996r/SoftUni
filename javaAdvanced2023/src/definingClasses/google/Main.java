@@ -11,10 +11,15 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         String input = keyboard.nextLine();
         String[] cmd = input.split("\\s+");
-      //  LinkedHashMap<String, Person> personStore = new LinkedHashMap<>();
-
+LinkedHashMap<String,Person> storePerson = new LinkedHashMap<>();
         while (!cmd[0].equals("End")) {
-            Person person = new Person(cmd[0]);
+            Person person;
+            if(!storePerson.containsKey(cmd[0])) {
+             person = new Person(cmd[0]);
+
+            } else {
+                 person = storePerson.get(cmd[0]);
+            }
             switch (cmd[1]) {
                 case "company":
                     Company company = new Company(cmd[2],cmd[3],Double.parseDouble(cmd[4]),cmd[0]);
@@ -36,8 +41,11 @@ public class Main {
                     Car car = new Car(cmd[2],Integer.parseInt(cmd[3]),cmd[0]);
                     break;
             }
-            System.out.println(person.getName());
-                person.addPerson(person);
+            if(!storePerson.containsKey(cmd[0])) {
+                storePerson.put(cmd[0],person);
+            }
+
+
 input = keyboard.nextLine();
             cmd = input.split("\\s+");
         }
